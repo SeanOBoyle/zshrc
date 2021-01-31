@@ -25,6 +25,8 @@ zinit snippet OMZ::lib/theme-and-appearance.zsh
 
 # OS specific plugins
 if [[ $CURRENT_OS == 'OS X' ]]; then
+  path+=('/opt/homebrew/bin')
+  export PATH
   zinit ice wait"0"
   zinit snippet OMZ::plugins/brew/brew.plugin.zsh
   zinit ice svn wait"0" lucid atinit"local ZSH=\$PWD" \
