@@ -1,3 +1,4 @@
+#!/bin/zsh
 #
 # .zshrc file
 # ln -s this file to ~/.zshrc
@@ -88,7 +89,10 @@ if [[ -e ~/zshrc/alias.zsh ]]; then
     source ~/zshrc/alias.zsh
 fi
 
-# Source Work Tools File
+# Source Work File
+if [[ -e ~/zshrc_work/work.zsh ]]; then
+    source ~/zshrc_work/work.zsh
+fi
 if [[ -e ~/zshrc_work/worktools.zsh ]]; then
     alias srcwrk='source ~/zshrc_work/worktools.zsh'
 fi
