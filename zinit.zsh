@@ -95,5 +95,16 @@ zinit light zsh-users/zsh-autosuggestions
 zinit ice wait"0" atinit"zpcompinit; zpcdreplay"
 zinit light zdharma/fast-syntax-highlighting
 
-# Load the pure theme, with zsh-async that's bundled with it
-zinit ice pick"async.zsh" src"pure.zsh"; zinit light sindresorhus/pure
+# Load the agkozak-zsh-prompt theme
+zinit load agkozak/agkozak-zsh-prompt
+
+# Configure the Prompt
+AGKOZAK_COLORS_BRANCH_STATUS=248
+AGKOZAK_BLANK_LINES=1
+AGKOZAK_LEFT_PROMPT_ONLY=1
+# Make the unicode prompt character red when superuser
+# and reversed when in vi command mode
+AGKOZAK_PROMPT_CHAR=( '%F{magenta}❯%f' '%F{red}❯%f' '%F{magenta}❮%f' )
+AGKOZAK_CUSTOM_SYMBOLS=( '⇣⇡' '⇣' '⇡' '+' 'x' '!' '>' '?' )
+AGKOZAK_USER_HOST_DISPLAY=0
+
