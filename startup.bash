@@ -4,7 +4,7 @@ ln -sfn ~/git/zshrc ~/zshrc
 ln -sfn ~/git/zshrc/zshrc.zsh ~/.zshrc
 rm -rf ~/.zinit
 mkdir ~/.zinit
-git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 cd ~
 
 # setup git-so-fancy

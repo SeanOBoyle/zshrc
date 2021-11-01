@@ -61,7 +61,7 @@ zinit snippet OMZ::plugins/history/history.plugin.zsh
 zinit ice wait"0"
 zinit snippet OMZ::plugins/per-directory-history/per-directory-history.zsh
 zinit ice wait"0"
-zinit light zdharma/history-search-multi-word
+zinit light zdharma-continuum/history-search-multi-word
 
 # Git
 zinit snippet OMZ::plugins/git/git.plugin.zsh
@@ -83,7 +83,7 @@ fi
 
 # Diff
 zinit ice wait"0" as"program" pick"bin/git-dsf"
-zinit light zdharma/zsh-diff-so-fancy
+zinit light zdharma-continuum/zsh-diff-so-fancy
 
 # Completions
 zinit ice wait"0" blockf
@@ -93,7 +93,7 @@ zinit ice wait"0" atload"_zsh_autosuggest_start"
 zinit light zsh-users/zsh-autosuggestions
 
 zinit ice wait"0" atinit"zpcompinit; zpcdreplay"
-zinit light zdharma/fast-syntax-highlighting
+zinit light zdharma-continuum/fast-syntax-highlighting
 
 # Load the agkozak-zsh-prompt theme
 zinit load agkozak/agkozak-zsh-prompt
