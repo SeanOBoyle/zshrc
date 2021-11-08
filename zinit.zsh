@@ -89,11 +89,11 @@ zinit light zdharma-continuum/zsh-diff-so-fancy
 zinit ice wait"0" blockf
 zinit light zsh-users/zsh-completions
 
-#zinit ice wait"0" atload"_zsh_autosuggest_start"
-#zinit light zsh-users/zsh-autosuggestions
-
 zinit ice wait"0" atinit"zpcompinit; zpcdreplay"
 zinit light zdharma-continuum/fast-syntax-highlighting
+
+zinit ice wait"0" atload"_zsh_autosuggest_start"
+zinit light zsh-users/zsh-autosuggestions
 
 # Load the agkozak-zsh-prompt theme
 zinit load agkozak/agkozak-zsh-prompt
