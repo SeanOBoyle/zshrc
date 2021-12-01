@@ -17,6 +17,13 @@ if [[ ${OSTYPE} == darwin* ]]; then
     alias osver='uname -a'
 fi
 
+# Directory Navigation
+alias ~="cd ~"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias cd..="cd .." # common typo
+
 # Disk Status
 alias df="df -h -T"
 alias dfp="df | grep %"
