@@ -31,7 +31,7 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
   zinit snippet OMZ::plugins/brew/brew.plugin.zsh
   zinit ice svn wait"0" lucid atinit"local ZSH=\$PWD" \
     atclone"mkdir -p plugins; cd plugins; ln -sfn ../. osx"
-  zinit snippet OMZ::plugins/osx
+  zinit snippet OMZ::plugins/macos
   zinit ice wait"0"
   zinit snippet OMZ::plugins/iterm2/iterm2.plugin.zsh
 elif [[ $CURRENT_OS == 'Linux' ]]; then
