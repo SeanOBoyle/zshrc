@@ -29,9 +29,6 @@ if [[ $CURRENT_OS == 'OS X' ]]; then
   export PATH
   zinit ice wait"0"
   zinit snippet OMZ::plugins/brew/brew.plugin.zsh
-  zinit ice svn wait"0" lucid atinit"local ZSH=\$PWD" \
-    atclone"mkdir -p plugins; cd plugins; ln -sfn ../. osx"
-  zinit snippet OMZ::plugins/macos
   zinit ice wait"0"
   zinit snippet OMZ::plugins/iterm2/iterm2.plugin.zsh
 elif [[ $CURRENT_OS == 'Linux' ]]; then
@@ -67,9 +64,6 @@ zinit light zdharma-continuum/history-search-multi-word
 zinit snippet OMZ::plugins/git/git.plugin.zsh
 zinit ice as"program" pick"$ZPFX/bin/git-*" make"PREFIX=$ZPFX" nocompile'!'
 zinit light tj/git-extras
-
-# Repo (for git)
-zinit ice svn; zinit snippet OMZ::plugins/repo
 
 # Python
 zinit snippet OMZ::plugins/pip/pip.plugin.zsh
