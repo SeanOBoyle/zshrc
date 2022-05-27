@@ -81,8 +81,8 @@ fi
 # Setup VirtualEnvWrapper
 export WORKON_HOME=$HOME/.virtualenvs
 
-# Source zinit Modules
-source ~/zshrc/zinit.zsh
+# Source znap Modules
+source ~/zshrc/znap.zsh
 
 # Source Alias File
 if [[ -e ~/zshrc/alias.zsh ]]; then

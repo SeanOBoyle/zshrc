@@ -4,6 +4,7 @@ alias dunnet='emacs -batch -l dunnet'
 alias cleantilde='find . -name .snapshot -prune -o -type f -name "*~*" -print | xargs rm -f &&  find . -name .snapshot -prune -o -type f -name ".*~*" -print | xargs rm -f '
 alias vi="vim"
 alias more="less"
+alias ls="ls --color=tty"
 
 # OS Version
 alias osver='echo "UNKNOWN OS: $OSTYPE"'
