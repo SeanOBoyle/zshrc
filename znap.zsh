@@ -25,10 +25,10 @@ znap source zpm-zsh/ssh
 znap source zsh-users/zsh-syntax-highlighting
 
 # OS - Command Not Found Helper
-znap source ohmyzsh/ohmyzsh plugins/command-not-found/command-not-found.plugin.zsh
+znap source ohmyzsh/ohmyzsh plugins/command-not-found
 
 # Common aliases
-znap source ohmyzsh/ohmyzsh plugins/common-aliases/common-aliases.plugin.zsh
+znap source ohmyzsh/ohmyzsh plugins/common-aliases
 
 znap source marlonrichert/zcolors
 znap eval   marlonrichert/zcolors "zcolors ${(q)LS_COLORS}"
