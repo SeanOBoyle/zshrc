@@ -2,9 +2,9 @@
 cd ~
 ln -sfn ~/git/zshrc ~/zshrc
 ln -sfn ~/git/zshrc/zshrc.zsh ~/.zshrc
-rm -rf ~/.zinit
-mkdir ~/.zinit
-git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
+rm -rf ~/.zi
+mkdir ~/.zi
+git clone https://github.com/z-shell/zi.git ~/.zi/bin
 cd ~
 
 # setup git-so-fancy
@@ -23,3 +23,4 @@ git config --global color.diff.whitespace "red reverse"
 
 # launch new zsh
 zsh
+
