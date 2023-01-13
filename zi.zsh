@@ -80,8 +80,8 @@ zi ice wait"0" as"program" pick"bin/git-dsf"
 zi light z-shell/zsh-diff-so-fancy
 
 # Completions
-zi ice wait"0" blockf
-zi light zsh-users/zsh-completions
+zi light-mode for \
+  z-shell/z-a-meta-plugins @annexes @zsh-users+fast
 
 zi ice wait"0" atinit"zpcompinit; zpcdreplay"
 zi light z-shell/fast-syntax-highlighting
