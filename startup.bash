@@ -1,13 +1,19 @@
 #!/bin/bash
+ZDOTDIR=~/.config/zsh
+mkdir -p $ZDOTDIR
 cd ~
-ln -sfn ~/git/zshrc ~/zshrc
-ln -sfn ~/git/zshrc/zshrc.zsh ~/.zshrc
-rm -rf ~/.zi
-mkdir ~/.zi
-git clone https://github.com/z-shell/zi.git ~/.zi/bin
+ln -sfn ~/git/zshrc/zshenv.zsh ~/.zshenv
+ln -sfn ~/git/zshrc/zshrc.zsh $ZDOTDIR/.zshrc
+ln -sfn ~/git/zshrc/antidote.zsh $ZDOTDIR/.antidoterc
+ln -sfn ~/git/zshrc/zfunctions $ZDOTDIR/.zfunctions
+ln -sfn ~/git/zshrc/zshrc.d $ZDOTDIR/.zshrc.d
+ln -sfn ~/git/zshrc/zsh_plugins.zsh $ZDOTDIR/.zsh_plugins.txt
+ln -sfn ~/git/zshrc/zstyles.zsh $ZDOTDIR/.zstyles
+rm -rf ~/git/antidote
+git clone https://github.com/getantidote/antidote ~/git/antidote
+ln -sfn ~/git/antidote $ZDOTDIR/.antidote
 cd ~
 
-# setup git-so-fancy
 git config --global core.pager "diff-so-fancy | less --tabs=4 -RFX"
 git config --global color.ui true
 git config --global color.diff-highlight.oldNormal    "red bold"

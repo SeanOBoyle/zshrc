@@ -1,93 +1,16 @@
 #!/bin/zsh
-#
-# .zshrc file
-# ln -s this file to ~/.zshrc
-#
+autoload -Uz compinit
+compinit
 
-#zmodload zsh/zprof
-
-# For sudo-ing aliases
-# https://wiki.archlinux.org/index.php/Sudo#Passing_aliases
-alias sudo='sudo '
-
-# Ensure languages are set
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-
-# Ensure editor is set
-export EDITOR=vim
-export SVN_EDITOR=vim
-
-# This fixes using SSH in urxvt
-if [[ $TERM == 'rxvt-unicode' ]] ; then
-    export TERM='xterm'
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.config/zsh/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Ensure path is unique
-typeset -U path
-
-#
-# OS Detection
-#
-
-UNAME=`uname`
-UNAME_KERNEL_VERSION=`uname -v`
-
-# Fallback info
-CURRENT_OS='Linux'
-DISTRO='NA'
-DISTRO_REL='current'
-
-if [[ $UNAME == 'Darwin' ]]; then
-    CURRENT_OS='OS X'
-    DISTRO_REL='current'
-elif [[ $UNAME == 'Linux' ]]; then
-
-    if [[ -f /etc/redhat-release ]]; then
-        # CentOS or Redhat?
-        if grep -q "CentOS" /etc/redhat-release; then
-            DISTRO='CentOS'
-        else
-            DISTRO='RHEL'
-        fi
-
-        # Still have some old RHEL distros around -- mark 6,7 as current
-        if grep -q "release 7" /etc/redhat-release; then
-            DISTRO_REL='current'
-        elif grep -q "release 6" /etc/redhat-release; then
-            DISTRO_REL='current'
-        else
-            DISTRO_REL='old'
-        fi
-    elif [[ $UNAME_KERNEL_VERSION == *rodete* ]]; then
-        DISTRO='Rodete'
-	DISTRO_REL='current'
-    else
-        # Assume Ubuntu if it's not RHEL
-        DISTRO='Ubuntu'
-        DISTRO_REL='current'
-
-        if  [[ $UNAME_KERNEL_VERSION == *"Microsoft"* ]]; then
-            DISTRO='UbuntuMicrosoft'
-        fi
-
-    fi
-else
-    DISTRO='Unknown'
-    DISTRO_REL='current'
-fi
-
-# Setup VirtualEnvWrapper
-export WORKON_HOME=$HOME/.virtualenvs
-
-# Source zi Modules
-source ~/zshrc/zi.zsh
-
-# Source Alias File
-if [[ -e ~/zshrc/alias.zsh ]]; then
-    source ~/zshrc/alias.zsh
-fi
+# Source Antidote Modules
+source ${ZDOTDIR:-$HOME}/.antidoterc
 
 # Source Work File
 if [[ -e ~/zshrc_work/work.zsh ]]; then
@@ -103,4 +26,5 @@ if [[ -e ~/zshrc_me/me.zsh ]]; then
     alias srcme='source ~/zshrc_me/me.zsh'
 fi
 
-#zprof
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
